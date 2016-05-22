@@ -1,0 +1,613 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Aplicações JavaScript de alta performance com React.js - Victor Hugo de Paiva Gonçales @victorvhpg</title>
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/league.css">
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+	<!-- Printing and PDF exports -->
+	<script>
+	var link = document.createElement('link');
+	link.rel = 'stylesheet';
+	link.type = 'text/css';
+	link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+	document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+	<style>
+	.lista {
+		font-size: 25px !important;
+	}
+
+	section {
+		text-align: justify;
+	}
+
+	section h2,
+	section h1 {
+		text-align: center;
+	}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<img src="img/logo.png" style="position:absolute;right:0;top:0;width:200px;opacity:0.2" />
+		<div class="slides">
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section style="text-align:center">
+				<h4>INFOESTE 2016</h4>
+				<h2>Aplicações JavaScript de alta performance com React.js</h2>
+				<div>
+					<img style="border:none;width:120px" src="img/logo.png" />
+				</div>
+				<p style="text-align:left">
+					<strong>Instrutor:</strong>
+					<br />Victor Hugo de Paiva Gonçales</p>
+				<div style="font-size:25px;text-align:left">
+					<ul>
+						<li>Analista de Sistemas - Coordenadoria de Sistemas Web - Unoeste </li>
+						<li>Sócio Fundador - Escolha Tecnologia</li>
+					</ul>
+				</div>
+				<div style="text-align:right">
+					<ul style="list-style:none;font-size:30px">
+						<li>
+							<a target="_blank" href="http://twitter.com/victorvhpg">@victorvhpg</a>
+						</li>
+						<li>
+							<a target="_blank" href="http://victorvhpg.github.io">http://victorvhpg.github.io</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2>Conteúdo </h2>
+				<ul style="font-size:20px">
+					<li>Aprender JavaScript</li>
+					<li> Conhecendo React.js</li>
+					<li> Ferramentas para desenvolver com React.js</li>
+					<li> Estrututa básica de um componente</li>
+					<li> JSX</li>
+					<li> Conceitos do React.js</li>
+					<li> Entendendo o Virtual DOM</li>
+					<li> State e Props</li>
+					<li> Composição</li>
+					<li> Fazendo Build do React.js</li>
+					<li> Criando Componentes</li>
+					<li> Ciclo de vida de um Componente</li>
+					<li> Eventos</li>
+					<li> Refs</li>
+					<li> Comunicação entre componentes pai/filho</li>
+					<li> Usando React junto com outras libs</li>
+					<li> Exemplo de Form - componentes controlavéis</li>
+					<li> SPA - Single Page Application</li>
+					<li> Rotas no React.js</li>
+					<li> Renderização de componentes no servidor</li>
+					<li> Arquitetura de desenvolvimento Flux</li>
+					<li> Desenvolvimento de uma aplicação de exemplo utilizando React.js</li>
+					<li> Quem utiliza React?</li>
+				</ul>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2> Aprender JavaScript </h2>
+				<p>
+					Bibliotecas/Frameworks JavaScript estão sempre surgindo, então antes de tudo você deve aprender JavaScript de verdade!!!
+				</p>
+				<ul class="lista">
+					<li>Não se limitar ao que aprendeu na faculdade ou no trabalho</li>
+					<li>Ler Livros/artigos/blogs especializados </li>
+					<li>Seguir/aprender padrões desenvolvimento</li>
+					<li>Acompanhar a comunidade JavaScript</li>
+					<li>Estudar/Ler os repositórios no GitHub de projetos JavaScript </li>
+					<li>Participe de grupos JavaScript</li>
+					<li>Pratique - Escreva Código</li>
+				</ul>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2> Conhecendo React.js </h2>
+				<p>
+					React é uma biblioteca open-source desenvolvida pelo Facebook, para construção de interfaces(Componentes) em JavaScript com
+					alta performance que permite composição e modularização de uma maneira muito simples.
+				</p>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2> Conhecendo React.js </h2>
+				<ul class="lista">
+					<li>Criação de interfaces com JavaScript</li>
+					<li>Interface reflete o estado da aplicação</li>
+					<li>Criação de componentes reutilizáveis de forma declarativa, modular e de fácil composição</li>
+					<li>Alta performance </li>
+					<li>Padronização de desenvolvimento</li>
+					<li>Fácil manutenção</li>
+					<li>Permite renderização no servidor - bom para SEO</li>
+					<li>Ecossistema moderno de desenvolvimento (Node, npm, babel, webpack, gulp etc... )</li>
+					<li>Taxa de adoção crescendo muito rápida pela comunidade JavaScript</li>
+					<li>Tudo é JavaScript</li>
+				</ul>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2> Conhecendo React.js </h2>
+				<p>Video da React.js Conf 2015 - mostrando que React possui uma performance superior ao Angular e ao Ember.</p>
+				https://www.youtube.com/watch?v=z5e7kWSHWTg&t=295
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2> Conhecendo React.js </h2>
+				<div style="text-align:center">Ember X Angular X React.js
+
+					<iframe width="854" height="480" data-src="https://www.youtube.com/embed/z5e7kWSHWTg?start=295&autoplay=1" frameborder="0" allowfullscreen></iframe>
+					<!--https://www.youtube.com/watch?v=z5e7kWSHWTg&t=295-->
+				</div>
+
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2>Ferramentas para desenvolver com React.js </h2>
+				<p>
+					<ul>
+						<li>Node.js</li>
+						<li>Gulp </li>
+						<li>Webpack</li>
+						<li>React Developer Tools</li>
+						<li>...</li>
+					</ul>
+				</p>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2> Estrututa básica de um componente</h2>
+				<p>
+					Antes de começar abra sua mente para alguns conceitos um pouco difícies de aceitar no começo ...
+				</p>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section data-background-video="img/mib.mp4" data-background-video-loop>
+				<p>
+					Empty your mind...
+				</p>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2> Estrututa básica de um componente</h2>
+				<p style="text-align:center">
+					<img src="img/basico.png" style="width:70%" />
+				</p>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2>JSX</h2>
+				<p style="text-align:center">HTML dentro do JavaScript, como assim? </p>
+				<img src="img/html.gif" style="width:100%" />
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2>JSX</h2>
+				<img src="img/jsx.png" style="width:100%" />
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section data-background="img/basico2.png">
+				<h2>JSX</h2>
+				<img src="img/basico2.png" style="width:100%" />
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2>JSX</h2>
+				<ul>
+					<li>Opcional</li>
+					<li>É um XML para facilitar a criação dos componentes </li>
+					<li>É convertido para JavaScript</li>
+					<li>Parece HTML, mas tem algumas regras diferentes
+						<ul>
+							<li>todas tags devem ser fechadas</li>
+							<li>atributos são case-sensitive: maxLength</li>
+							<li>class fica: className</li>
+							<li>for fica: htmlFor</li>
+							<li>style recebe um objeto literal:
+								<br />&lt;h1 style={{color: "red"}}&gt;</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2>JSX</h2>
+				<p>
+					As expressões javascript são avaliadas entre { }
+				</p>
+				<div style="text-align:center">
+					<img src="img/jsx-exp.png" style="width:70%" />
+				</div>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2>JSX</h2>
+				<p>
+					Exemplo de iteração
+				</p>
+				<div style="text-align:center">
+					<img src="img/iteracao.png" style="width:70%" />
+				</div>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2>Conceitos do React.js</h2>
+				<ul>
+					<li>Virtual DOM</li>
+					<li> Props - <code>this.props</code></li>
+					<li> State - <code>this.state</code></li>
+					<li> Context - <code>this.context</code></li>
+				</ul>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2>Entendendo o Virtual DOM</h2>
+				<p>
+					O Virtual DOM é uma representação leve em memória do DOM.
+					<br /> A cada mudança de estado o React renderiza o componente novamente, mas para uma melhor performance ele utiliza o virtual
+					DOM.
+				</p>
+				<p> A cada mudança de estado:</p>
+				<ul>
+					<li> Cria uma nova árvore virtual DOM</li>
+					<li> Faz um diff com a virtual DOM antiga </li>
+					<li> Atualiza a árvore DOM nativa somente onde ocorreu alguma mudança</li>
+				</ul>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2> State e Props </h2>
+				<p>
+					Através das propriedades que componentes passam dados para seus filhos. (<code>this.props</code>).
+					<br /> Props devem ser <strong>read-only</strong>.
+					<br /> Componentes podem tem estados para gerenciar alguma lógica interna (<code>this.state</code>). Somente use <code>this.setState</code>					para atualizar um estado. Toda vez* que atualiza o estado o <code>render</code> é chamado.
+				</p>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2> Context </h2>
+				<p>
+					Através do context podemos acessar recursos em qualquer nivel da árvore de componentes
+				</p>
+				<div style="text-align:center">
+					<img src="img/context.png" style="width:70%" />
+				</div>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2>Composição</h2>
+				<p>
+					Através da composição podemos montar componentes complexos que são divididos em componentes menores e mais simples.
+					<br />
+					<code>this.props.children</code>
+				</p>
+				<div style="text-align:center">
+					<img src="img/composicao.png" style="width:70%" />
+				</div>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2> Fazendo Build do React.js </h2>
+				<p>
+					<ul>
+						<li>gulp</li>
+						<li>webpack</li>
+					</ul>
+				</p>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2> Criando Componentes  </h2>
+				<p>
+					exemplo prático ...
+				</p>
+				<div style="text-align:center">
+					<img src="img/exemplo.png" style="width:70%" />
+				</div>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2>  Ciclo de vida de um Componente </h2>
+				<p>
+					<ul style="font-size:30px">
+						<li>
+							<strong>componentWillMount()</strong>:
+							<br /> é chamado antes de ser inserido no DOM
+							<br />
+						</li>
+						<li>
+							<strong>componentDidMount()</strong>:
+							<br /> é chamado depois de ser inserido no DOM
+							<br />
+						</li>
+						<li>
+							<strong>componentWillUnmount()</strong>:
+							<br /> é chamado antes de ser removido do DOM
+							<br />
+						</li>
+						<li>
+							<strong>componentWillReceiveProps()</strong>:
+							<br /> é chamado quando recebe uma propriedade
+							<br />
+						</li>
+						<li>
+							<strong>shouldComponentUpdate()</strong>:
+							<br /> podemos impedir o render() caso retorne <code>false</code> no shouldComponentUpdate()
+							<br />
+						</li>
+						<li>
+							<strong>componentWillUpdate()</strong>:
+							<br /> é chamado antes do render() (mudança de state/props)
+							<br />
+						</li>
+						<li>
+							<strong>componentDidUpdate()</strong>:
+							<br /> é chamado depois do render()
+							<br />
+						</li>
+					</ul>
+				</p>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section data-background="img/ciclo.png" data-background-size="55%">
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2> Eventos </h2>
+				<p>
+					React tem um controle interno de eventos e só delega evento DOM na raiz da árvore de componentes, depois os eventos são gerenciados
+					pelo próprio React.
+					<br /> Os nomes dos eventos são lowerCamelCase:
+					<br /> onClick, onChange, onTouchStart
+				</p>
+				<div style="text-align:center">
+					<img src="img/eventos.png" style="width:70%" />
+				</div>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2>
+					 Refs
+			    </h2>
+				<p>
+					Utilizado para acessar diretamente o elemento, por exemplo um elemento DOM ou instância de um componente.
+				</p>
+				<div style="text-align:center">
+					<img src="img/refs.png" style="width:70%" />
+				</div>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2>
+					Comunicação entre componentes pai/filho
+			    </h2>
+				<p>
+					Podemos passar aos descendentes funções callback para passar dados ao pai quando forem axecutadas pelo filho.
+				</p>
+				<div style="text-align:center">
+					<img src="img/paifilho.png" style="width:70%" />
+				</div>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2>
+				     Usando React junto com outras libs
+			    </h2>
+				<p>
+					Para ter certeza que o componente estará no DOM quando for utilizar alguma outra lib, devemos usar o evento componentDidMount()
+				</p>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2>
+				   Exemplo de Form - componentes controlavéis
+			    </h2>
+				<div style="text-align:center">
+					<img src="img/form.png" />
+				</div>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2>
+				SPA - Single Page Application
+			    </h2>
+				<p>
+					São aplicações que carregam apenas uma vez a estrutura inicial e depois todas as outras ações/requisições/navegações são
+					feitas via ajax.
+					<br /> Exemplos: Facebook, Gmail
+				</p>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2>
+				Rotas no React.js
+			    </h2>
+				<p>
+					Para Rotas é possível utilizar o React-Router
+					<a href="https://github.com/reactjs/react-router" target="_blank"> https://github.com/reactjs/react-router </a>
+				</p>
+				<div style="text-align:center">
+					<img src="img/rotas.png" />
+				</div>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2>
+			Renderização de componentes no servidor
+			    </h2>
+				<p>
+					Os componentes React podem ser renderizados no servidor.
+					<br /> Node, Java, .NET, php etc...
+				</p>
+				<div style="text-align:center">
+					<img src="img/server.png" />
+				</div>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2>
+		 Arquitetura de desenvolvimento Flux
+			    </h2>
+				<div style="text-align:center">
+					<img src="img/flux.png" />
+				</div>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2>
+		 Arquitetura de desenvolvimento Flux
+			    </h2>
+				<div style="text-align:center">
+					<img src="img/flux2.png" style="width:70%" />
+				</div>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2>
+			 Desenvolvimento de uma aplicação de exemplo utilizando React.js
+			    </h2>
+				<p>
+					pratica...
+					<div style="text-align:center">
+						<img src="img/app.png" />
+					</div>
+				</p>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section data-background="img/app.png">
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2>
+		Quem utiliza React?
+			    </h2>
+				<p>
+					Grandes aplicações como Facebook, Instagram, WhatsApp Web, NetFlix,Yahoo Mail, Khan Academy, FlipBoard, BBC, Periscope Web,
+					dentre outras, já utilizam React.js.
+					<br /> No Brasil algumas empresas já estão com algum produto com React, por exemplo: "Globo Play" e algumas partes do "portal
+					G1" da Rede Globo
+					<br />
+				</p>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2>
+					Quem utiliza React?
+			    </h2>
+				<p>
+					O aplicativo MemesPlay e o "E aí Pah" da empresa "Escolha Tecnologia" foram desenvolvidos com React.
+					<div style="text-align:center">
+						<img src="img/apps.png" />
+					</div>
+				</p>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+			<section>
+				<h2>
+					FIM
+			    </h2>
+
+				<p>
+					<a href="https://github.com/victorvhpg/minicurso-react.js" target="_blank">
+						https://github.com/victorvhpg/minicurso-react.js
+					</a>
+				</p>
+			</section>
+			<!-- =========================================================================================================== -->
+			<!-- =========================================================================================================== -->
+		</div>
+	</div>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+	<script>
+	// More info https://github.com/hakimel/reveal.js#configuration
+	Reveal.initialize({
+		history: true,
+		controls: true,
+		progress: true,
+
+
+		// More info https://github.com/hakimel/reveal.js#dependencies
+		dependencies: [{
+			src: 'plugin/markdown/marked.js'
+		}, {
+			src: 'plugin/markdown/markdown.js'
+		}, {
+			src: 'plugin/notes/notes.js',
+			async: true
+		}, {
+			src: 'plugin/highlight/highlight.js',
+			async: true,
+			callback: function() {
+				hljs.initHighlightingOnLoad();
+			}
+		}]
+	});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+.list-menu a{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.item-video{
+    min-width: 300px;
+    max-width: 600px;
+    width: 25%;
+    display: inline-block;
+    margin: 2%;
+}
+
+
+.item-video video{
+    height: 250px;
+    display: block;
+    border:1px solid #ddd;
+    width: 100%;
+}
+
+.lista-video{
+    text-align: center;
+}
