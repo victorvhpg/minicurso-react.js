@@ -28,7 +28,7 @@ var Menu = React.createClass({
                     <Link
                         onClick={this.esconderMenu}
                         className="mdl-list__item"
-                        to="/">
+                        to="/minicurso-react.js/app/build/">
                         <span className="mdl-list__item-primary-content">
                             <i className="material-icons mdl-list__item-icon">home</i>
                             Início
@@ -38,7 +38,7 @@ var Menu = React.createClass({
                     <Link
                         onClick={this.esconderMenu}
                         className="mdl-list__item"
-                        to="/favoritos">
+                        to="/minicurso-react.js/app/build/favoritos">
                         <span className="mdl-list__item-primary-content">
                             <i className="material-icons mdl-list__item-icon">favorite</i>
                             Favoritos
@@ -47,7 +47,7 @@ var Menu = React.createClass({
                     <Link
                         onClick={this.esconderMenu}
                         className="mdl-list__item"
-                        to="/aliens">
+                        to="/minicurso-react.js/app/build/aliens">
                         <span className="mdl-list__item-primary-content">
                             <i className="material-icons mdl-list__item-icon">bug_report</i>
                             Aliens
@@ -56,7 +56,7 @@ var Menu = React.createClass({
                     <Link
                         onClick={this.esconderMenu}
                         className="mdl-list__item"
-                        to="/sobre">
+                        to="/minicurso-react.js/app/build/sobre">
                         <span className="mdl-list__item-primary-content">
                             <i className="material-icons mdl-list__item-icon">info</i>
                             Sobre
