@@ -27,7 +27,7 @@ var Rotas = React.createClass({
   render: function () {
     return (
       <Router history={browserHistory}>
-        <Route path="/" component={Master}>
+        <Route path="/minicurso-react.js/app/build/" component={Master}>
           <IndexRoute component={Home} />
           <Route path="sobre" component={Sobre}/>
           <Route path="favoritos" component={Favoritos}/>
