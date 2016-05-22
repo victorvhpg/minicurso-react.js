@@ -7,4 +7,6 @@ var Rotas = require("./rotas");
 ReactDOM.render(<Rotas />, document.getElementById("app"));
 
 //para atulizar  em tempo  real  o navegador //apenas no  desenvolvimento
-module.hot.accept();
+if(module&& module.hot){
+    module.hot.accept();
+}
