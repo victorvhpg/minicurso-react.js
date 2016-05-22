@@ -101,7 +101,7 @@ var ItemVideo = React.createClass({
                             }}
                             className="mdl-button mdl-js-button mdl-js-ripple-effect">
                             <img
-                                src="/img/play.png"
+                                src="./img/play.png"
                                 style={{
                                     width: "100%"
                                 }} />
