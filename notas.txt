@@ -1,0 +1,14 @@
+modulos npm
+npm  init==========
+
+
+npm install -g webpack
+
+npm install --save-dev babel-core babel-loader babel-preset-react
+
+
+
+
+ 
+
+http://www.mocky.io/v2/573c52bb1100009016aa8a4b
